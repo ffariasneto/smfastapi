@@ -25,3 +25,9 @@
 Javascript Object Notation - é um formato leve de troca de dados e usado para comunicação entre sistemas, especialmente em aplicações web.
 A estrutura do JSON é similar a pares chave-valor, mas ele é sempre uma string formatada, podendo ser convertida para tipos nativos, como dicionários, em várias linguagens de programação.
 OBS: No JSON só é possível usar aspas duplas.
+### DummyJSON
+https://dummyjson.com/
+# FASTAPI
+É um framework Python moderno e de alto desempenho, ideal para construir APIs web.
+Ele oferece recursos como tipagem estática, validação de dados, documentação automática e integração com banco de dados.
+Projetado para ser rápido, fácil de usar e eficiente.

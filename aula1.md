@@ -31,3 +31,10 @@ https://dummyjson.com/
 É um framework Python moderno e de alto desempenho, ideal para construir APIs web.
 Ele oferece recursos como tipagem estática, validação de dados, documentação automática e integração com banco de dados.
 Projetado para ser rápido, fácil de usar e eficiente.
+# Criando ambiente virtual
+## No Git Bash
+Comando python -m venv venv
+## Ativar ambiente virtual
+source venv/Scripts/activate
+## Instalar FASTAPI e UVICORN
+pip install fastapi uvicorn

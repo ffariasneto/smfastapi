@@ -2,16 +2,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/saudacao") # o @ é o decorate permite atribuir uma função a classe
-def read_root():
-    return {
-        "message": "hello world"
-    }
-
-@app.get("/lista_produtos")
-def read_products():
-    return [
-        {
+products = [
+    {
             "id": 1,
             "name": "Product 1",
             "price": 28.90,
@@ -29,4 +21,23 @@ def read_products():
             "price": 19.90,
             "stock": 100
         }
-    ]
+]
+
+@app.get("/saudacao") # o @ é o decorate permite atribuir uma função a classe
+def read_root():
+    return {
+        "message": "hello world"
+    }
+
+@app.get("/lista_produtos")
+def read_products():
+    return {
+        "products": products
+    }
+
+@app.get("/qte_produtos")
+def quantidade():
+    return {
+        "products": products,
+        "quantidade": len(products)
+    }

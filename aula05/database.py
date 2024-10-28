@@ -1,16 +1,12 @@
-from fastapi import FastAPI
-from database import create_table
-from routes import users
+from sqlmodel import SQLModel, create_engine, Session
 
+DATABASE_URL = "mysql+pymysql://root:@localhost:3306/bd_teste"
 
-app = FastAPI()
+engine = create_engine(DATABASE_URL, echo=True)
 
-app.include_router(users.router)
+def get_session():
+    with Session(engine) as session:
+        yield session
 
-@app.on_event("startup")
-def on_startup():
-    create_table()
-
-@app.get("/")
-def read_api():
-    return {"message": "api running"}
+def create_table():
+    SQLModel.metadata.create_all(engine)

@@ -9,6 +9,8 @@ def create_token(dados: dict):
     return token
 
 def auth(request: Request, call_next):
+    if request.url == "http://localhost:8000/token":
+        return call_next(request)
     token = request.headers.get("Authorization")
 
     if not token:
